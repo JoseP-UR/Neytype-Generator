@@ -1,0 +1,12 @@
+body {
+    color: white;
+    background: url("bg.jpg");
+}
+
+#typezone {
+    font-size: 5.5em;
+}
+
+input {
+    color: black;
+}
