@@ -10,16 +10,11 @@ function getURLParams(sParam) { //get parameters from th url
 }
 
 $(document).ready(function() {
-    var json = $.getJSON('https://api.myjson.com/bins/136ura', function(dados) {
-        // console.log(dados);
-        return dados;
-    }); //fills the json variable with a response object from the myjson api
     var regex = RegExp("[a-zA-Z]"); //regular expression to differentiate numbers and symbols
 
     $("#inpt").on("input", function() {
         var txt = $("#inpt").val().split(""); //when the input is changed, this array is filled all over again, this is done so the code is made simpler and less complex
         var imgarr = []; //array that saves the image tags, this is what is rendered to the page
-        var letras = json.responseJSON; //pass the json object to this object
         for (var i = 0; i < txt.length; i++) {
             if (regex.test(txt[i])) { //test the regular expression
                 imgarr.push("<img src='" + letras[txt[i].toUpperCase()] + "' type='image/png'>"); //if it's a letter, pushes an image tag to the array
